@@ -1,0 +1,87 @@
+<!-- File: index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personalized Board Books for Kids</title>
+  <link rel="stylesheet" href="globals.css">
+</head>
+<body>
+  <header class="navbar">
+    <a href="index.html"><img src="logo.png" alt="Logo" aria-label="Home"></a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+      </ul>
+    </nav>
+    <div class="burger" aria-label="Toggle navigation">
+      <div></div><div></div><div></div>
+    </div>
+  </header>
+
+  <section class="container text-center">
+    <h1>Turn Bedtime Into the Best 5 Minutes of Their Day</h1>
+    <p class="lead">Create a keepsake they’ll cherish for decades—just upload a selfie, and see a free preview in 60 seconds.</p>
+    <ul class="bonus-stack">
+      <li>📗 Printed board book + free e-book</li>
+      <li>🎁 $5 gift card for your next order</li>
+      <li>✅ Double Love-It-Or-We-Reprint Guarantee</li>
+    </ul>
+    <button class="btn js-open-modal">Start My Book</button>
+    <p class="form-legal">By clicking, you agree to our <a href="terms.html">Terms</a> & <a href="privacy.html">Privacy Policy</a>.</p>
+  </section>
+
+  <section id="before-after" class="container">
+    <h2 class="text-center">Before & After</h2>
+    <div class="before-after-grid">
+      <div><img src="sample-photo.jpg" alt="Child’s photo"><p class="caption">You upload a selfie</p></div>
+      <div><img src="illustration-sample.jpg" alt="Illustrated page"><p class="caption">We turn it into art</p></div>
+    </div>
+  </section>
+
+  <section id="features" class="container">
+    <h2 class="text-center">How It Works</h2>
+    <div class="steps">
+      <div><strong>1.</strong> Upload a photo</div>
+      <div><strong>2.</strong> Customize name & dedication</div>
+      <div><strong>3.</strong> Preview in 60s</div>
+      <div><strong>4.</strong> Delivered in 3 days</div>
+    </div>
+    <div class="timer">
+      <p>Free preview in <span class="countdown" id="preview-timer">00:60</span> seconds</p>
+    </div>
+  </section>
+
+  <section id="testimonials" class="container">
+    <h2 class="text-center">What Parents Are Saying</h2>
+    <div class="testimonial-slider">
+      <div class="testimonial"><p>“My daughter cried tears of joy!”</p><small>— Karen, TX</small></div>
+      <div class="testimonial"><p>“Arrived in 48 hrs, amazing quality.”</p><small>— Mike, CA</small></div>
+      <!-- more UGC thumbnails can be injected here -->
+    </div>
+  </section>
+
+  <section id="pricing" class="container text-center">
+    <h2>Only $29.99 Today</h2>
+    <p>Regularly $45+—our special launch pricing ends when we hit today’s print-run cap.</p>
+    <p><strong>Limited daily spots available!</strong></p>
+    <button class="btn js-open-modal">Get My Book</button>
+  </section>
+
+  <script>
+    // Mobile nav toggle
+    document.querySelector('.burger').addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.toggle('active');
+    });
+    // Simple preview timer
+    let seconds = 60;
+    const timerEl = document.getElementById('preview-timer');
+    setInterval(() => {
+      if (seconds > 0) { timerEl.textContent = '00:' + (--seconds).toString().padStart(2,'0'); }
+    }, 1000);
+  </script>
+</body>
+</html>
